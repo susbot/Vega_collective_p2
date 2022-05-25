@@ -1,15 +1,35 @@
 {% extends 'base.html' %}
 
-{% block title %} Collective P2 {% endblock title %}
-
+{% block title %}Home{% endblock title %}
 
 {% block content %}
+
+
+
+
     {% if user.is_authenticated %}
-        Hi {{ user.username }}!
-        <p><a href="{% url 'logout' %}">Log Out</a></p>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome to Version 2 </h1>
+            <p class="lead">Please explore further.</p>
+        </div>
+    </div>
     {% else %}
-        <p>You are not logged in</p>
-        <a href="{% url 'login' %}">Log In</a>
-        <a href="{% url 'signup' %}">Sign Up</a>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome to Version 2 </h1>
+            <p class="lead">Please take a moment to Sign up and explore further.</p>
+        </div>
+    </div>
+     {% endif %}
+
+
+
+    {% if user.is_authenticated %}
+    <br/>
+        <a class="btn btn-primary btn-lg btn-block" href="">New Incident</a>
+    <br/>
+
     {% endif %}
 {% endblock content %}
