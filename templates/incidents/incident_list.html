@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Vendors {% endblock title %}
+
+{% block content %}
+    <div>
+        <a class="btn btn-primary btn-lg btn-block" href="{% url 'incidents/incident_new' %}">New Incident</a>
+    </div>
+    <br />
+    {% for asset in object_list %}
+        <div class="card">
+            <div class="card-header">
+                <span class="font-weight-bold"></span> &middot;
+                <span class="text-muted">
+                </span>
+            </div>
+            <div class="card-body">
+                <p>Name: </p>
+                <p>Make: </p>
+                <p>Platform: </p>
+            </div>
+            <div class="card-footer text-center text-muted">
+                <a href="">Details</a> |
+                <a href="">Edit</a> |
+                <a href="">Delete</a>
+            </div>
+        </div>
+        <br />
+
+    {% endfor %}
+{% endblock content %}

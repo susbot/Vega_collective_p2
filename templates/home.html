@@ -28,7 +28,7 @@
 
     {% if user.is_authenticated %}
     <br/>
-        <a class="btn btn-primary btn-lg btn-block" href="">New Incident</a>
+        <a class="btn btn-primary btn-lg btn-block" href="{% url 'incidents/incident_new' %}">New Incident</a>
     <br/>
 
     {% endif %}
