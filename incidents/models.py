@@ -1,4 +1,5 @@
-
+from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
 # Create your models here.
@@ -15,6 +16,10 @@ class Incident(models.Model):
     additional_notes = models.TextField()
     date_incident_reported = models.DateField(auto_now_add=True, editable=True)
     date_incident_occured = models.DateField(auto_now=False)
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE
+    )
 
 
     def __str__(self):

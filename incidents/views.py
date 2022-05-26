@@ -27,17 +27,29 @@ class HomeCreateView(LoginRequiredMixin, CreateView):
     template_name = 'incidents/incident_new.html'
     fields = ['full_name', 'team', 'organization_impacted_by_incident', 'incident_discovery_method',
                'affiliation_to_org', 'user_incident_reported_by', 'employee_email',
-              'customer_email', 'prevention', 'additional_notes','date_incident_occured']
+              'customer_email', 'prevention', 'additional_notes','date_incident_occured','author']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 class HomeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Incident
     template_name = 'incidents/incident_edit.html'
     fields = ['full_name', 'team', 'organization_impacted_by_incident', 'incident_discovery_method',
               'affiliation_to_org', 'user_incident_reported_by', 'employee_email',
-              'customer_email', 'prevention', 'additional_notes','date_incident_occured']
+              'customer_email', 'prevention', 'additional_notes','date_incident_occured','author']
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
 
 class HomeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Incident
     template_name = 'incidents/incident_delete.html'
     success_url = reverse_lazy('home')
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
 
