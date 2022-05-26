@@ -11,6 +11,7 @@ from django.views.generic.edit import (
 )
 from django.urls import reverse_lazy
 from .models import Incident
+
 # Create your views here.
 
 class HomeListView(LoginRequiredMixin, ListView):
@@ -52,4 +53,6 @@ class HomeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user
+
+
 

@@ -40,11 +40,13 @@ INSTALLED_APPS = [
 
     #3rd Party
     'crispy_forms',
+    'rest_framework',
 
     #Local
     'accounts',
     'pages',
     'incidents',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +135,9 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny'
+    ]
+}
