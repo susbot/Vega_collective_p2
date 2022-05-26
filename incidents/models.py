@@ -21,4 +21,4 @@ class Incident(models.Model):
         return self.organization_impacted_by_incident[:50]
 
     def get_absolute_url(self):
-        return reverse('incident_detail', args=[str(self.id)])
+        return reverse('incidents/incident_detail', args=[str(self.id)])

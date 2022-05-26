@@ -16,3 +16,5 @@ urlpatterns = [
     path('<int:pk>/', HomeDetailView.as_view(), name='incidents/incident_detail'),
     path('', HomeListView.as_view(), name='incidents/incident_list'),
 ]
+
+

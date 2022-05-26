@@ -8,6 +8,7 @@
         <p>{{ incident.affiliation_to_org }}</p>
         <p>{{ incident.user_incident_reported_by }}</p>
         <p>{{ incident.employee_email }}</p>
+        <p>{{ incident.customer_email }}</p>
         <p>{{ incident.prevention }}</p>
         <p>{{ incident.additional_notes }}</p>
         <p>{{ incident.incident_notes }}</p>
@@ -15,7 +16,7 @@
         <p>{{ incident.date_incident_occured }}</p>
     </div>
 
-    <a href=""> + Edit Incident</a>
-    <a href=""> + Delete Incident</a>
+    <a href="{% url 'incidents/incident_edit' incident.pk %}"> + Edit Incident</a>
+    <a href="{% url 'incidents/incident_delete' incident.pk %}"> + Delete Incident</a>
 {% endblock content %}
 
