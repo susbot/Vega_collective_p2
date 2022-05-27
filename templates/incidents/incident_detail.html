@@ -2,22 +2,26 @@
 
 {% block content %}
     <div class="post-entry">
-        <h2>{{ incident.full_name }}</h2>
-        <p>{{ incident.team }}</p>
-        <p>{{ incident.organization_impacted_by_incident }}</p>
-        <p>{{ incident.affiliation_to_org }}</p>
-        <p>{{ incident.user_incident_reported_by }}</p>
-        <p>{{ incident.employee_email }}</p>
-        <p>{{ incident.customer_email }}</p>
-        <p>{{ incident.prevention }}</p>
-        <p>{{ incident.additional_notes }}</p>
-        <p>{{ incident.incident_notes }}</p>
-        <p>{{ incident.date_incident_reported }}</p>
-        <p>{{ incident.date_incident_occured }}</p>
-        <p>{{ incident.author }}</p>
+
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true">Full Name: {{ incident.full_name }}</li>
+            <li class="list-group-item">Team: {{ incident.team }}</li>
+            <li class="list-group-item">Organization Impacted: {{ incident.organization_impacted_by_incident }}</li>
+            <li class="list-group-item">Affiliation to Organization: {{ incident.affiliation_to_org }}</li>
+            <li class="list-group-item">Incident reported by: {{ incident.user_incident_reported_by }}</li>
+            <li class="list-group-item">Employee Email: {{ incident.employee_email }}</li>
+            <li class="list-group-item">Customer Email: {{ incident.customer_email }}</li>
+            <li class="list-group-item">How can we prevent this?: {{ incident.prevention }}</li>
+            <li class="list-group-item">Additional Notes: {{ incident.additional_notes }}</li>
+            <li class="list-group-item">Incident Notes: {{ incident.incident_notes }}</li>
+            <li class="list-group-item">Incident reported date: {{ incident.date_incident_reported }}</li>
+            <li class="list-group-item">Incident Occurred date: {{ incident.user_incident_reported_by }}</li>
+           <li class="list-group-item">Author: {{ incident.author }}</li>
+        </ul>
+
     </div>
 
-    <a href="{% url 'incidents/incident_edit' incident.pk %}"> + Edit Incident</a>
+    |<a href="{% url 'incidents/incident_edit' incident.pk %}"> + Edit Incident</a> |
     <a href="{% url 'incidents/incident_delete' incident.pk %}"> + Delete Incident</a>
 {% endblock content %}
 

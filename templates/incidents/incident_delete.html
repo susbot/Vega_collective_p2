@@ -7,6 +7,6 @@
     <form action="" method="post">
         {% csrf_token %}
         <P>Are you sure you want to delete {{ incident.organization_impacted_by_incident }}?</P>
-        <input type="submit" value="Confirm">
+        <button class="btn btn-danger ml-2" type="submit">Confirm</button>
     </form>
 {% endblock content %}
