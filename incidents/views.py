@@ -26,9 +26,8 @@ class HomeDetailView(LoginRequiredMixin, DetailView):
 class HomeCreateView(LoginRequiredMixin, CreateView):
     model = Incident
     template_name = 'incidents/incident_new.html'
-    fields = ['full_name', 'team', 'organization_impacted_by_incident', 'incident_discovery_method',
-               'affiliation_to_org', 'user_incident_reported_by', 'employee_email',
-              'customer_email', 'prevention', 'additional_notes','date_incident_occured','author']
+    fields = ['what_happened', 'customer_id', 'customer_email', 'how_was_it_discovered',
+              'how_could_we_have_prevented_this', 'additional_notes', 'data_of_incident', 'author']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -37,9 +36,8 @@ class HomeCreateView(LoginRequiredMixin, CreateView):
 class HomeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Incident
     template_name = 'incidents/incident_edit.html'
-    fields = ['full_name', 'team', 'organization_impacted_by_incident', 'incident_discovery_method',
-              'affiliation_to_org', 'user_incident_reported_by', 'employee_email',
-              'customer_email', 'prevention', 'additional_notes','date_incident_occured','author']
+    fields = ['what_happened', 'customer_id', 'customer_email','how_was_it_discovered',
+              'how_could_we_have_prevented_this', 'additional_notes', 'data_of_incident', 'author']
 
     def test_func(self):
         obj = self.get_object()

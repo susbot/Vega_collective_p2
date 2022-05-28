@@ -3,19 +3,22 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
 # Create your models here.
+incident_type = (
+    ("Inadvertent Data Exposure", "Inadvertant Data Exposure"),
+    ("Security Misconfiguration", "Security Misconfiguration"),
+    ("Product Vulnerability", "Product Vulnerability"),
+    ("Vendor Incident", "Vendor Incident"),
+)
+
 class Incident(models.Model):
-    full_name = models.CharField(max_length=50)
-    team = models.CharField(max_length=20)
-    organization_impacted_by_incident = models.CharField(max_length=20)
-    incident_discovery_method = models.TextField()
-    affiliation_to_org = models.CharField(max_length=30)
-    user_incident_reported_by = models.CharField(max_length=20)
-    employee_email = models.EmailField()
+    what_happened = models.CharField(max_length=40, choices=incident_type)
+    customer_id = models.CharField(max_length=15)
     customer_email = models.EmailField()
-    prevention = models.TextField()
+    when_did_it_happen = models.DateField(auto_now_add=True, editable=False)
+    how_was_it_discovered = models.TextField()
+    how_could_we_have_prevented_this = models.TextField()
     additional_notes = models.TextField()
-    date_incident_reported = models.DateField(auto_now_add=True, editable=True)
-    date_incident_occured = models.DateField(auto_now=False)
+    data_of_incident = models.DateField(auto_now=False)
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE
@@ -23,7 +26,7 @@ class Incident(models.Model):
 
 
     def __str__(self):
-        return self.organization_impacted_by_incident[:50]
+        return self.customer_id[:50]
 
     def get_absolute_url(self):
         return reverse('incidents/incident_detail', args=[str(self.id)])

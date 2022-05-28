@@ -4,19 +4,15 @@
     <div class="post-entry">
 
         <ul class="list-group">
-            <li class="list-group-item disabled" aria-disabled="true">Full Name: {{ incident.full_name }}</li>
-            <li class="list-group-item">Team: {{ incident.team }}</li>
-            <li class="list-group-item">Organization Impacted: {{ incident.organization_impacted_by_incident }}</li>
-            <li class="list-group-item">Affiliation to Organization: {{ incident.affiliation_to_org }}</li>
-            <li class="list-group-item">Incident reported by: {{ incident.user_incident_reported_by }}</li>
-            <li class="list-group-item">Employee Email: {{ incident.employee_email }}</li>
+            <li class="list-group-item disabled" aria-disabled="true">What Happend ?: {{ incident.what_happened }}</li>
+            <li class="list-group-item">Customer ID: {{ incident.customer_id }}</li>
             <li class="list-group-item">Customer Email: {{ incident.customer_email }}</li>
-            <li class="list-group-item">How can we prevent this?: {{ incident.prevention }}</li>
+            <li class="list-group-item">When did it happen ?: {{ incident.when_did_it_happen }}</li>
+            <li class="list-group-item">How was it discovered ?: {{ incident.how_was_it_discovered }}</li>
+            <li class="list-group-item">How could we have prevented this ?: {{ incident.how_could_we_have_prevented_this }}</li>
             <li class="list-group-item">Additional Notes: {{ incident.additional_notes }}</li>
-            <li class="list-group-item">Incident Notes: {{ incident.incident_notes }}</li>
-            <li class="list-group-item">Incident reported date: {{ incident.date_incident_reported }}</li>
-            <li class="list-group-item">Incident Occurred date: {{ incident.user_incident_reported_by }}</li>
-           <li class="list-group-item">Author: {{ incident.author }}</li>
+            <li class="list-group-item">Date of Incident: {{ incident.data_of_incident }}</li>
+            <li class="list-group-item">Author of Report: {{ incident.author }}</li>
         </ul>
 
     </div>

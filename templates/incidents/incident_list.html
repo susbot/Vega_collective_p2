@@ -15,9 +15,9 @@
                 </span>
             </div>
             <div class="card-body">
-                <p>Full Name: {{ incident.full_name }} </p>
+                <p>Customer ID: {{ incident.customer_id }} </p>
                 <p>Customer Email: {{ incident.customer_email }} </p>
-                <p>Employee Email: {{ incident.employee_email }}</p>
+                <p>Author of Report: {{ incident.author }}</p>
             </div>
             <div class="card-footer text-center text-muted">
                 <a href="{% url 'incidents/incident_detail' incident.pk %}">Details</a> |
