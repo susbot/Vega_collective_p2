@@ -2,10 +2,12 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+
     <h1>New Incident</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form|crispy }}
         <button class="btn btn-success ml-2" type="submit">Save</button>
+        <a class="btn btn-warning" href="{% url 'incidents/incident_list' %}">Cancel</a>
     </form>
 {% endblock content %}

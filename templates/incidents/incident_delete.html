@@ -6,7 +6,8 @@
     <h1>Delete Post</h1>
     <form action="" method="post">
         {% csrf_token %}
-        <P>Are you sure you want to delete {{ incident.organization_impacted_by_incident }}?</P>
+        <P>Are you sure you want to delete customer incident: {{ incident.customer_id }}?</P>
         <button class="btn btn-danger ml-2" type="submit">Confirm</button>
+        <a class="btn btn-warning" href="{% url 'incidents/incident_list' %}">Cancel</a>
     </form>
 {% endblock content %}

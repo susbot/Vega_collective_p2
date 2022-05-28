@@ -20,9 +20,9 @@
                 <p>Author of Report: {{ incident.author }}</p>
             </div>
             <div class="card-footer text-center text-muted">
-                <a href="{% url 'incidents/incident_detail' incident.pk %}">Details</a> |
-                <a href="{% url 'incidents/incident_edit' incident.pk %}">Edit</a> |
-                <a href="{% url 'incidents/incident_delete' incident.pk %}">Delete</a>
+                <a class="btn btn-success" href="{% url 'incidents/incident_detail' incident.pk %}">Details</a>
+                <a class="btn btn-warning" href="{% url 'incidents/incident_edit' incident.pk %}">Edit Incident</a>
+                <a class="btn btn-danger" href="{% url 'incidents/incident_delete' incident.pk %}">Delete Incident</a>
             </div>
         </div>
         <br />

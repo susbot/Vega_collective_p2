@@ -7,5 +7,6 @@
         {% csrf_token %}
         {{ form|crispy }}
         <button class="btn btn-info ml-2" type="submit">Update</button>
+        <a class="btn btn-dark" href="{% url 'incidents/incident_list' %}">Go Back</a>
     </form>
 {% endblock content %}

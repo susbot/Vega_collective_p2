@@ -17,7 +17,9 @@
 
     </div>
 
-    |<a href="{% url 'incidents/incident_edit' incident.pk %}"> + Edit Incident</a> |
-    <a href="{% url 'incidents/incident_delete' incident.pk %}"> + Delete Incident</a>
+    <a class="btn btn-warning" href="{% url 'incidents/incident_edit' incident.pk %}">Edit Incident</a>
+    <a class="btn btn-danger" href="{% url 'incidents/incident_delete' incident.pk %}">Delete Incident</a>
+    <a class="btn btn-dark" href="{% url 'incidents/incident_list' %}">Go Back</a>
+
 {% endblock content %}
 
