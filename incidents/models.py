@@ -9,6 +9,12 @@ incident_type = (
     ("Product Vulnerability", "Product Vulnerability"),
     ("Vendor Incident", "Vendor Incident"),
 )
+severity = (
+    ("Low", "Low"),
+    ("Medium", "Medium"),
+    ("High", "High"),
+    ("Critical", "Critical"),
+)
 
 class Incident(models.Model):
     what_happened = models.CharField(max_length=40, choices=incident_type)
@@ -19,9 +25,11 @@ class Incident(models.Model):
     how_could_we_have_prevented_this = models.TextField()
     additional_notes = models.TextField()
     data_of_incident = models.DateField(auto_now=False)
+    level = models.CharField(max_length=20, choices=severity)
     author = models.ForeignKey(
         get_user_model(),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        editable=False
     )
 
 

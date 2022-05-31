@@ -27,7 +27,7 @@ class HomeCreateView(LoginRequiredMixin, CreateView):
     model = Incident
     template_name = 'incidents/incident_new.html'
     fields = ['what_happened', 'customer_id', 'customer_email', 'how_was_it_discovered',
-              'how_could_we_have_prevented_this', 'additional_notes', 'data_of_incident', 'author']
+              'how_could_we_have_prevented_this', 'additional_notes', 'data_of_incident', 'level']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -37,7 +37,7 @@ class HomeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Incident
     template_name = 'incidents/incident_edit.html'
     fields = ['what_happened', 'customer_id', 'customer_email','how_was_it_discovered',
-              'how_could_we_have_prevented_this', 'additional_notes', 'data_of_incident', 'author']
+              'how_could_we_have_prevented_this', 'additional_notes', 'data_of_incident', 'level']
 
     def test_func(self):
         obj = self.get_object()

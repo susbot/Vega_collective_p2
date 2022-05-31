@@ -3,15 +3,17 @@
 Incident response App, including Authentication & Authorization, + An API Backend.
 
 
-#Django REST Framework
+# Django REST Framework
 
 URL: http://127.0.0.1:8000/api/v1/
+Demo: https://vega.susbot.io/api/v1/
 1. DRF Project level Permissions
 2. DRF User Authentication
 
-#Django
+# Django
 
 URL: http://127.0.0.1:8000/
+Demo: https://vega.susbot.io/
 1. Custom User Model
 2. User Authentication
    1. Login
@@ -22,6 +24,8 @@ URL: http://127.0.0.1:8000/
    1. Mixins
 5. Forms
 6. Class Based Views
+7. pipenv - https://pipenv.pypa.io/en/latest/
+
 
 
 Made with <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-balloon-heart-fill" viewBox="0 0 16 16">
