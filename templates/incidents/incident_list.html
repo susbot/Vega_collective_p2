@@ -8,24 +8,36 @@
     </div>
     <br />
     {% for incident in object_list %}
+        <div class="card border-dark mb-3">
         <div class="card">
             <div class="card-header">
-                <p>Severity Level: {{ incident.level }}</p>
+                <p class="list-group-item list-group-item-danger" aria-disabled="true">Severity Level: {{ incident.level }}</p>
                 <span class="text-muted">
                 </span>
             </div>
             <div class="card-body">
-                <p>Customer ID: {{ incident.customer_id }} </p>
-                <p>Customer Email: {{ incident.customer_email }} </p>
-                <p>Author of Report: {{ incident.author }}</p>
+                <p class="list-group-item">Customer ID: {{ incident.customer_id }} </p>
+                <p class="list-group-item">Customer Email: {{ incident.customer_email }} </p>
+                <p class="list-group-item">Author of Report: {{ incident.author }}</p>
             </div>
             <div class="card-footer text-center text-muted">
                 <a class="btn btn-success" href="{% url 'incidents/incident_detail' incident.pk %}">Details</a>
                 <a class="btn btn-warning" href="{% url 'incidents/incident_edit' incident.pk %}">Edit Incident</a>
                 <a class="btn btn-danger" href="{% url 'incidents/incident_delete' incident.pk %}">Delete Incident</a>
+                <a class="btn btn-dark" href="">Set Reminder</a>
+
             </div>
         </div>
-        <br />
-
+            <br />
+        </div>
     {% endfor %}
 {% endblock content %}
+
+
+    {% if incident.get_level_display ==  low %}
+        <p class="list-group-item list-group-item-primary" aria-disabled="true">Severity Level: {{ incident.level }}</p>
+    {% else %}
+        <p class="list-group-item list-group-item-danger" aria-disabled="true">Severity Level: {{ incident.level }}</p>
+    {% endif %}
+
+   <p>Severity level {{incident.get_level_display }}</p>
