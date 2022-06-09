@@ -21,8 +21,16 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+
+    # Points to the urls.py Incident App (Incident List)
     path('incidents/', include('incidents.urls')),
+
+    # Default API URL - API Homepage
     path('api/v1/', include('api.urls')),
+
+    # Default API Auth URL - Login and Logout functionality
     path('api-auth/', include('rest_framework.urls')),
+
+    # Points to urls.py Pages app (HomePage)
     path('', include('pages.urls')),
 ]

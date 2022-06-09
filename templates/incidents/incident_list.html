@@ -34,7 +34,7 @@
 {% endblock content %}
 
 
-    {% if incident.get_level_display ==  low %}
+    {% if incident.get_level_display ==  Critical %}
         <p class="list-group-item list-group-item-primary" aria-disabled="true">Severity Level: {{ incident.level }}</p>
     {% else %}
         <p class="list-group-item list-group-item-danger" aria-disabled="true">Severity Level: {{ incident.level }}</p>
