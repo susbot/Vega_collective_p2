@@ -140,8 +140,12 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
+
+# Crispy
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+
+# DRF Permission Policy
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'

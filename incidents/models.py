@@ -29,7 +29,7 @@ class Incident(models.Model):
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
-        editable=False
+        editable=True,
     )
 
 
