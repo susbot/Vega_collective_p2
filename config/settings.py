@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'pages',
     'incidents',
     'api',
+    'customers',
 ]
 
 MIDDLEWARE = [

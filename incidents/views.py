@@ -49,7 +49,7 @@ class HomeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = ['what_happened', 'customer_id', 'customer_email', 'how_was_it_discovered',
               'how_could_we_have_prevented_this', 'additional_notes', 'data_of_incident', 'level']
 
-    # [UserPassesTestMixin] Restricts access so only the author of the Incident has permission to Update or Delete
+    # [UserPassesTestMixin] Restricts access so only the author of the Incident has permission to Update
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user
@@ -62,7 +62,7 @@ class HomeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     template_name = 'incidents/incident_delete.html'
     success_url = reverse_lazy('home')
 
-    # [UserPassesTestMixin] Restricts access so only the author of the Incident has permission to Update or Delete
+    # [UserPassesTestMixin] Restricts access so only the author of the Incident has permission to Delete
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user
