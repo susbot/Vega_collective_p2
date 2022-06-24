@@ -2,8 +2,9 @@
 
 Incident response App, including Authentication & Authorization, + An API Backend.
 
-#Product Planning (wip)
+# Product
 https://susbot.notion.site/Collective-Vega-3e020e6e8c1c486fb97c761d91286ec7
+
 # Django REST Framework
 
 URL: http://127.0.0.1:8000/api/v1/
