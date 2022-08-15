@@ -4,7 +4,7 @@ from django.db import models
 from django.urls import reverse
 # Create your models here.
 incident_type = (
-    ("Inadvertent Data Exposure", "Inadvertant Data Exposure"),
+    ("Inadvertent Data Exposure", "Inadvertent Data Exposure"),
     ("Security Misconfiguration", "Security Misconfiguration"),
     ("Product Vulnerability", "Product Vulnerability"),
     ("Vendor Incident", "Vendor Incident"),
