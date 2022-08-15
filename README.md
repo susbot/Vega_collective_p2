@@ -1,32 +1,31 @@
-# Incident Response Playbook streamlined 
+# The Problem
 
-Incident response App, including Authentication & Authorization, + An API Backend.
+1. Incident response reports are recorded on Google Sheets or excel
+2. Incident response reports are misplaced or Isolated.
+3. Incident response reports are Decentralized 
 
-# Product
-https://susbot.notion.site/Collective-Vega-3e020e6e8c1c486fb97c761d91286ec7
+# Incident Response streamlined 
+
+Incident Response Management
 
 # Django REST Framework
 
-URL: http://127.0.0.1:8000/api/v1/
-Demo: https://vega.susbot.io/api/v1/
-1. Django REST Framework Project level Permissions
-2. Django REST Framework User Authentication
+local URL: http://127.0.0.1:8000/api/v1/
+
+Public Demo: https://vega.susbot.io/api/v1/
+
+
+# API Documentation
+
+Public Demo: https://vega.susbot.io/api/docs/
+
 
 # Django
 
-URL: http://127.0.0.1:8000/
-Demo: https://vega.susbot.io/
-1. Custom User Model
-2. User Authentication
-   1. Login
-   2. Logout
-   3. Signup
-3. Bootstrap
-4. Permissions and Authentication
-   1. Mixins
-5. Forms
-6. Class Based Views
-7. pipenv - https://pipenv.pypa.io/en/latest/
+local URL: http://127.0.0.1:8000/
+
+Public Demo: https://vega.susbot.io/
+
 
 
 
